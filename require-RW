@@ -1,0 +1,46 @@
+1. user người đăng kí  Membership program sẽ là người được sử dụng  Reward Program.
+ex : nếu đăng kí 1 accont on site mà không pay cho Membership program 
+=> Sẽ không được hưởng các chế độ của Reward program.
+
+2. Chỉ duy nhất member on site, người đã mua membership mới có thể được : see/add/earn/spend
+
+3. Có 2 level cho membership.
+- 1 cho 9.99$ /month
+- 1 cho 19.99$ / month
+=> Cần làm rõ thêm yêu cầu chỗ này. 
+
+4. Chỉ member mới thấy point mà associated with each product.
+
+5. member sẽ được thông báo trên dashboard hoặc email rằng họ sẽ có thể login và sử dụng points của họ nếu đủ đk 
+(ngày này được setup sẵn là những ngày nào trong tháng)
+
+6. Invite đến friend tham gia để được nhận điểm thưởng.
+
+7. Trong member dashboard cần phân biệt rõ xem những gì họ đã được earn :
+Ví dụ : 
+Rewards points earned through purchases = 200
+Rewards points earned through referrals = 40
+Total points earned: 240
+
+8. Point tích lũy sẽ k được cộng thêm.
+Điểm sẽ reset lại nếu sử dụng để nhận Free gift.
+Vd : Tích lũy điểm trong 11 tháng, và hy vọng tháng 12 tổng điểm tích lũy sẽ đưa tôi vào top những món quà tốt nhất 
+(vào ngày đầu tiền của tháng- đăng nhập để được món quà tốt nhất).
+Tuy nhiêu, nếu tôi nhận free gift mỗi tháng, tổng số điểm của tôi sẽ bị reset khi giao địch đó thành công. 
+=> Nên có một thiết lập cho các sản phẩm để người quản trị có thể chỉ định rằng sản phẩm này có thể được mua như là 1 FreeGift.
+Điểm của thành viên (19.9$) sẽ được cập nhật sớm nhất để họ có thể truy cập vào trag và chọn quà.
+
+9.Không redeem sản phẩm với points.
+=> Point chỉ dùng cho bảng xếp hạng (ngày mà vào site và chọn product )
+=> User không thể using point để redeem cho sản phẩm.
+=> Lý do duy nhất để user có được point là để xác nhận level của họ để truy cập vào site và có cơ hội xem các sản phẩm tốt nhất.
+Point sẽ được reset lại mỗi tháng, những mỗi tháng số điểm họ kiếm được sẽ xác định level của họ.
+
+Level xác định theo mức point, ví dụ :
+Lv1 : > 300 points 
+Lv2 : 250-> 299 points
+....
+
+10. Không phải ai cũng nhận được Free gift vì nguồn cung cấp là hạn chế.
+=> Mục tiêu sẽ là tiếp tục tích điểm để được nhận hàng trước.
+

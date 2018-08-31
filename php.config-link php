@@ -1,0 +1,43 @@
+ls -l /usr/bin/php
+sudo rm /usr/bin/php
+
+sudo ln -sv /opt/lampp/bin/php-5.6.30 /usr/bin/php
+
+
+xoa php trong usr/bin/php
+
+roi tao link tu /opt/lampp/bin/php-5.6.30 vao trong thu muc usr/bin file la php
+
+
+------------ Set Default PHP Version 7.0 ------------
+$ sudo update-alternatives --set php /usr/bin/php7.0
+
+
+--------- Install Filezilla ---------
+sudo add-apt-repository ppa:n-muench/programs-ppa
+sudo apt-get update
+sudo apt-get install filezilla
+
+
+
+ps aux | grep 'firefox' => tim chuong trinh 
+
+/// cut mp3 : 
+sudo apt-get install audacity
+
+
+Disable turning off screen
+gsettings set org.gnome.desktop.session idle-delay 0
+Enable turning off screen with 5 min delay
+gsettings set org.gnome.desktop.session idle-delay 300
+
+///////////////// backgrounds /////////////
+
+    Place the image that you want to use as background image at /usr/share/backgrounds/ Example:
+    sudo cp ~/Pictures/1.jpg /usr/share/backgrounds/1.jpg
+    Edit the /usr/share/gnome-background-properties/ubuntu-wallpapers.xml. 
+    sudo gedit/usr/share/gnome-background-properties/ubuntu-wallpapers.xml
+mr उबून्टू  ug ئۇبۇنتۇ
+
+
+

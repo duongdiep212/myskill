@@ -1,0 +1,227 @@
+///////////////// PYTHON //////////////
+http://ubuntuhandbook.org/index.php/2017/07/install-python-3-6-1-in-ubuntu-16-04-lts/
+
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+
+Finally switch between the two python versions for python3 via command:
+
+sudo update-alternatives --config python3
+
+
+
+
+==> Lỗi ko thể open terminal : 
+To alternate between python 3.X version just run:
+sudo update-alternatives --config python3
+To restore software updates just type the number of python 3.5.
+
+/////////////////
+
+User -> composer require -> Magestore -> Git
+
+
+locate bin/php
+cd /etc/php
+
+7 to 5 : 
+Apache:-
+sudo a2dismod php7.1
+sudo a2enmod php5.6
+sudo service apache2 restart
+CLI:-
+sudo update-alternatives --set php /usr/bin/php5.6
+sudo update-alternatives --set phpize /usr/bin/phpize5.6
+sudo update-alternatives --set php-config /usr/bin/php-config5.6
+
+5 to 7 : 
+Apache:-
+sudo a2dismod php5.6
+sudo a2enmod php7.1
+sudo service apache2 restart
+CLI:-
+sudo update-alternatives --set php /usr/bin/php7.1
+sudo update-alternatives --set phpize /usr/bin/phpize7.1
+sudo update-alternatives --set php-config /usr/bin/php-config7.1
+
+
+Install : 
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install -y php7.1
+sudo apt-get install -y php5.6.5
+
+sudo apt-get update
+sudo apt-get install php7.1-curl
+sudo apt-get install php7.1-xml
+sudo apt-get install php7.1-gd
+sudo apt-get install php7.1-mcrypt
+
+sudo apt-get install php5.6-curl
+sudo apt-get install php5.6-mcrypt
+sudo apt-get install php5.6-gd
+sudo apt-get install php5.6-xml
+sudo apt install php5.6-bcmath
+sudo apt-get install php5.6-mbstring
+sudo apt-get install php5.6-intl
+sudo apt-get install php5.6-zip
+
+
+/home/duongdiep/.config/composer/auth.json
+
+cd /home/duongdiep/.config/composer/
+nano auth.json 
+
+composer update
+composer remove module
+composer config --unset repo.reponame
+
+composer config repositories.reponame path <path>
+
+
+
+composer config repositories.magestore composer http://localhost/testcomposer/
+composer update
+composer require magestore/ordersuccess-magento2
+composer require magestore/ordersuccess-magento2 1.1.1
+composer show -i 
+composer show -i magestore/ordersuccess-magento2
+
+
+magestore/dropshipsuccess-magento2
+magestore/ordersuccess-magento2
+magestore/suppliersuccess-magento2
+
+
+
+$ php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
+
+
+install server : 
+https://www.vultr.com/docs/how-to-install-apache-mysql-and-php-on-ubuntu-16-04
+install composer : 
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-16-04
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+sudo apt-get remove apache2*
+Install Apache
+sudo apt-get install apache2
+Restart server
+sudo service apache2 restart
+
+apachectl configtest
+systemctl status apache2.service
+
+
+sudo apt-get install libapache2-mod-php -y
+
+htaccess : 
+sudo vim /etc/apache2/sites-enabled/000-default.conf 
+duoi' : 
+	ServerAdmin webmaster@localhost
+	DocumentRoot /var/www/html
+them :
+	<Directory "/var/www/html/">
+	AllowOverride All
+	</Directory>
+	
+tao htaccess file : 
+
+<RequireAll>
+    Require all granted
+    Require ip 10.252.46.165
+</RequireAll>
+
+<RequireAll>
+    Require all granted
+    Require ip 113.190.242.147
+</RequireAll>
+
+
+%{REMOTE_ADDR} !=123.45.67.89
+%{HTTP_USER_AGENT} == 'BadBot'
+<If "%{REMOTE_ADDR} == 113.190.242.147">
+    Require all denied
+</If>
+
+
+
+
+<If "%{REMOTE_ADDR} == '113.190.242.147'">
+       Require valid-user
+       Require ip 113.190.242.141
+</If>
+<If "%{REMOTE_ADDR} != '113.190.242.147'">
+    <RequireAny>
+       Require valid-user
+       Require ip 113.190.242.141
+    </RequireAny>
+</If>
+
+
+
+AuthName "Authenticate"
+AuthType Basic
+AuthUserFile "/var/www/html/.htpasswd"
+<RequireAny>
+   Require valid-user
+   Require ip 113.190.242.141
+</RequireAny>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /mvc/index.php [L,QSA]
+Options -Indexes
+
+
+
+<If "%{REMOTE_ADDR} == '113.190.242.147'">
+       Require valid-user
+       Require ip 113.190.242.141
+</If>
+<If "%{REMOTE_ADDR} != '113.190.242.147'">
+    <RequireAny>
+       Require valid-user
+       Require ip 113.190.242.141
+    </RequireAny>
+</If>
+
+
+
+
+
+<If "%{REQUEST_URI} == '/pushcode/'">
+   <RequireAny>
+       Require ip 113.190.242.141
+    </RequireAny>
+</If>
+<If "%{REQUEST_URI} == '/pullcode/'">
+    <RequireAny>
+       Require ip 113.190.242.147
+    </RequireAny>
+</If>
+
+AuthName "Authenticate"
+AuthType Basic
+AuthUserFile "/var/www/html/.htpasswd"
+<RequireAny>
+   Require valid-user
+   Require ip 113.190.242.141
+</RequireAny>
+Options -Indexes
+
+
+sudo a2enmod authz_groupfile
+sudo tail /var/log/apache2/error.log
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+
+
+
+apachectl configtest
+systemctl status apache2.service
+
+
+

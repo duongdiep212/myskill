@@ -1,0 +1,87 @@
+https://askubuntu.com/questions/111085/how-do-i-hide-the-grub-menu-showing-up-at-the-beginning-of-boot
+
+----------------------------------------------
+Install Ibus :
+-- sudo apt-get install ibus-unikey
+-- ibus restart
+=> if cannot connect to Ibus
+=> 1.  Go to :  System Settings >> Language Support
+2. In "Keyboard input method System" select "IBus"
+3. Run : ibus-setup
+4. logout and login
+
+-- Go to :  System Settings >> Text Entry
+-- add : vietnam (ibus)
+
+----------------------------------------------
+Notepadqq :
+---download :
+	sudo snap install notepadqq
+---launchPad :
+	sudo add-apt-repository ppa:notepadqq-team/notepadqq
+	sudo apt-get update
+	sudo apt-get install notepadqq
+
+
+----------------------------------------------
+PhpStorm
+sudo tar xfz PhpStorm-*.tar.gz -C /opt/
+cd opt/PhpStorm-*/bin
+
+----------------------------------------------
+WebStorm
+sudo tar xfz WebStorm-*.tar.gz -C /opt/
+cd opt/WebStorm-*/bin
+
+
+----------------------------------------------
+xampp :
+sudo chmod +x xampp-linux-x64-7.1.7-0-installer.run
+sudo su
+./xampp-linux-x64-7.1.7-0-installer.run
+
+	/opt/lampp/etc/php.ini
+	max_execution_time, upload_max_filesize, memory_limit and post_max_size in the php.ini configuration file.
+	All of these three settings limit the maximum size of data that can be submitted and handled by PHP.
+	Please note that post_max_size needs to be larger than upload_max_filesize.
+
+----------------------------------------------
+--------- Install Filezilla ---------
+sudo add-apt-repository ppa:n-muench/programs-ppa
+sudo apt-get update
+sudo apt-get install filezilla
+
+
+----------------------------------------------
+Disable turning off screen
+gsettings set org.gnome.desktop.session idle-delay 0
+Enable turning off screen with 5 min delay
+gsettings set org.gnome.desktop.session idle-delay 300
+
+
+///////////////// backgrounds /////////////
+
+Place the image that you want to use as background image at /usr/share/backgrounds/ Example:
+sudo cp ~/Pictures/1.jpg /usr/share/backgrounds/1.jpg
+Edit the /usr/share/gnome-background-properties/ubuntu-wallpapers.xml.
+sudo gedit /usr/share/gnome-background-properties/ubuntu-wallpapers.xml
+
+
+----------------------------------------------
+Remove guest Account
+sudo nano /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf
+Add the following line, save and then close.
+allow-guest=false
+
+---------------------------------------------- NVM - Node - npm
+install or update nvm:
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+nvm ls-remote
+This will list the available versions of nodejs.
+Select the version you want to install:
+nvm install xxxxxx
+Check the version:
+node -v
+
+
+----------------------------------------------
